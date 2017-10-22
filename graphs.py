@@ -317,6 +317,6 @@ print(timeit.timeit('G9.DijkstrasVersion1(G9.vertices[0])',setup="from __main__ 
 print(timeit.timeit('G9.DijkstrasVersion2(G9.vertices[0])',setup="from __main__ import G9",number=1000))
  
 G10 = generateRandomWeightedDigraph(64, 128, 1, 10)
-print("G8\t64\t\t128", end = "\t")
+print("G10\t64\t\t128", end = "\t")
 print(timeit.timeit('G10.DijkstrasVersion1(G10.vertices[0])',setup="from __main__ import G10",number=1000), end = "\t")
 print(timeit.timeit('G10.DijkstrasVersion2(G10.vertices[0])',setup="from __main__ import G10",number=1000))
