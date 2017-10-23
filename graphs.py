@@ -148,7 +148,7 @@ class Graph:
         
         while priorityQ:
             tempVertex = heapq.heappop(priorityQ)
-            heapq.heappush(priorityQ, tempVertex)
+#             heapq.heappush(priorityQ, tempVertex)
 
             for e in tempVertex.edges:
                 v = e.neighbor
@@ -158,7 +158,7 @@ class Graph:
                     v.distance = newDistance
                     v.pred = tempVertex
                     heapq.heappush(priorityQ, v)
-            heapq.heappop(priorityQ)
+#             heapq.heappop(priorityQ)
         
         paths = []
         for v in self.vertices:
@@ -174,7 +174,6 @@ class Graph:
         while not binaryHeap.is_empty():
             tempVertex = binaryHeap.peek_min()
 
-#             if tempVertex.visited == False:
             for e in tempVertex.edges:
                 v = e.neighbor
                 newDistance = tempVertex.distance + e.weight
@@ -183,7 +182,6 @@ class Graph:
                     v.distance = newDistance
                     v.pred = tempVertex
                     binaryHeap.add(v, v.value)
-#                 tempVertex.visited = True
             binaryHeap.extract_min()
         
         paths = []
